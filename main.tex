@@ -1,0 +1,64 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- Codificación, idioma y tipografía ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% --- Márgenes y diseño de página ---
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Gráficos, colores y utilidades ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage[hypertexnames=false, colorlinks=true, linkcolor=urjcdark, urlcolor=urjcred, citecolor=urjcred]{hyperref}
+
+% --- Paleta institucional URJC ---
+\definecolor{urjcred}{HTML}{C8102E}
+\definecolor{urjcdark}{HTML}{1F2937}
+\definecolor{urjcgray}{HTML}{4B5563}
+\definecolor{urjcbglight}{HTML}{F9FAFB}
+
+\newcommand{\asignatura}{Estadística Matemáticas}
+\newcommand{\curso}{2026--2027}
+\newcommand{\titulopractica}{Práctica: Estadística con R}
+\newcommand{\subtitulopractica}{Cadenas de Markov, Estadística Descriptiva e Inferencia Estadística}
+
+\newcommand{\autores}{%
+    Enrique Aldama Moradillo \\
+    Sara Guillén Martínez \\
+    David Sebastián Sticea Covaciu%
+}
+\newcommand{\grupoclase}{Grupo B}
+\newcommand{\fechaentrega}{22 de diciembre de 2026}
+
+% ==============================================================================
+\begin{document}
+
+% --- Portada---
+\input{chapters/portada}
+
+% --- Inicio de la memoria (numeración desde la página 1) ---
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\tableofcontents
+\newpage
+
+\section{Cadenas de Markov: convergencia sin independencia}
+% \input{chapters/ejercicios_1_2}
+
+\section{Estadística descriptiva: análisis de datos reales}
+% \input{chapters/ejercicio_3}
+
+\section{Inferencia estadística: estimación, contrastes y regresión}
+% \input{chapters/ejercicio_4}
+
+\end{document}

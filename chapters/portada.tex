@@ -1,0 +1,105 @@
+% !TEX root = ../main.tex
+% ==============================================================================
+% PORTADA DE LA PRÁCTICA
+% ==============================================================================
+% Edita los datos del grupo, autores y fecha en la sección de configuración
+% de main.tex (o directamente aquí si lo prefieres).
+% ==============================================================================
+
+\begin{titlepage}
+    \thispagestyle{empty}
+
+    % --- Elemento gráfico sutil (barra lateral institucional en TikZ) ---
+    \begin{tikzpicture}[remember picture, overlay]
+        % Banda vertical izquierda en rojo institucional URJC y gris oscuro
+        \fill[urjcred] (current page.north west) rectangle ([xshift=0.65cm, yshift=-11.5cm]current page.north west);
+        \fill[urjcdark] ([yshift=-11.5cm]current page.north west) rectangle ([xshift=0.65cm]current page.south west);
+        % Línea fina decorativa paralela
+        \draw[urjcred!35, line width=0.8pt] ([xshift=0.85cm]current page.north west) -- ([xshift=0.85cm]current page.south west);
+    \end{tikzpicture}
+
+    \vspace*{0.2cm}
+
+    % --- Cabecera institucional ---
+    \noindent
+    \begin{minipage}[c]{0.18\textwidth}
+        \IfFileExists{assets/logo_urjc.png}{%
+            \includegraphics[width=\linewidth]{assets/logo_urjc.png}%
+        }{%
+            % Emblema vectorial minimalista inspirado en la URJC
+            \begin{tikzpicture}[scale=0.55]
+                % Corona (tres círculos + barra)
+                \fill[urjcred] (0.25, 2.35) circle (0.16);
+                \fill[urjcred] (0.85, 2.52) circle (0.22);
+                \fill[urjcred] (1.45, 2.35) circle (0.16);
+                \fill[urjcred] (0.12, 1.98) rectangle (1.58, 2.14);
+                % Letra U estilizada
+                \fill[urjcdark] (0.12, 1.80) -- (0.46, 1.80) -- (0.46, 0.72)
+                    arc[start angle=180, end angle=360, radius=0.39]
+                    -- (1.24, 1.80) -- (1.58, 1.80) -- (1.58, 0.72)
+                    arc[start angle=360, end angle=180, radius=0.73] -- cycle;
+            \end{tikzpicture}%
+        }
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.79\textwidth}
+        {\Large\bfseries\color{urjcdark} Universidad Rey Juan Carlos}\\[0.25em]
+        {\normalsize\scshape\color{urjcgray} Escuela Técnica Superior de Ingeniería Informática}\\[0.15em]
+        {\normalsize\color{urjcred}\bfseries Grado en Matemáticas}
+    \end{minipage}
+
+    \vspace{0.8cm}
+    \noindent{\color{urjcred}\rule{\linewidth}{1.2pt}}
+
+    \vspace{2.6cm}
+
+    % --- Etiqueta de asignatura y curso ---
+    \noindent
+    {\small\bfseries\color{urjcred}\MakeUppercase{\asignatura} \quad $\cdot$ \quad Curso \curso}
+
+    \vspace{0.6cm}
+
+    % --- Título principal ---
+    \noindent
+    {\fontsize{30}{36}\selectfont\bfseries\color{urjcdark} \titulopractica \par}
+
+    \vspace{0.5cm}
+
+    % --- Subtítulo descriptivo ---
+    \noindent
+    {\large\color{urjcgray} \subtitulopractica \par}
+
+    \vspace{1.2cm}
+    \noindent{\color{urjcdark!25}\rule{0.35\linewidth}{1.5pt}}
+
+    \vfill
+
+    % --- Bloque de metadatos (Autores, Grupo, Fecha) ---
+    \noindent
+    \begin{tikzpicture}
+        \node[
+            fill=urjcbglight,
+            draw=urjcdark!15,
+            rounded corners=4pt,
+            inner sep=16pt,
+            text width=\dimexpr\linewidth-32.8pt\relax,
+            anchor=north west
+        ] {
+            \renewcommand{\arraystretch}{1.45}
+            \begin{tabular}{@{}l@{\hspace{1.2em}}p{0.62\linewidth}@{}}
+                \textbf{\color{urjcdark} Integrantes del grupo:} &
+                \begin{minipage}[t]{\linewidth}\raggedright \autores \end{minipage} \\[0.4em]
+                \textbf{\color{urjcdark} Grupo:}                 & \grupoclase \\
+                \textbf{\color{urjcdark} Fecha de entrega:}      & \fechaentrega \\
+            \end{tabular}
+        };
+    \end{tikzpicture}
+
+    \vspace{0.8cm}
+
+    % --- Pie de portada ---
+    \begin{center}
+        {\footnotesize\color{urjcgray} Memoria de Práctica elaborada en \LaTeX\ --- Móstoles, Madrid}
+    \end{center}
+
+\end{titlepage}
